@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Software Architecture & Algorithm Case Studies by Youssef Adel — Huffman Engine, Algo Hub, MIPS Verilog, LMS SRS."/>
+  <title>Architecture Case Studies | Youssef Adel</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .subpage-hero { padding:130px 0 60px; border-bottom:1px solid var(--border-glass); }
+    .subpage-hero-tag { display:inline-block; background:var(--purple-dim); color:var(--purple); border:1px solid rgba(168,85,247,0.2); border-radius:999px; padding:5px 16px; font-size:0.78rem; font-weight:700; letter-spacing:0.07em; margin-bottom:16px; }
+    .subpage-hero h1 { font-size:clamp(1.9rem,4vw,3rem); font-weight:800; margin-bottom:14px; }
+    .subpage-hero p  { color:var(--text-secondary); max-width:600px; font-size:0.97rem; line-height:1.8; }
+    .projects-grid-arch { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:56px; margin-bottom:56px; }
+    @media(max-width:768px){ .projects-grid-arch{ grid-template-columns:1fr; } }
+    .project-full-card { border-radius:var(--radius-lg); padding:28px; }
+    .project-full-card .proj-title { font-size:1rem; font-weight:700; margin-bottom:8px; }
+    .project-full-card .proj-hook { font-size:0.82rem; color:var(--text-secondary); direction:rtl; text-align:right; border-right:2px solid var(--purple-dim); padding-right:10px; margin-bottom:10px; font-style:italic; line-height:1.75; }
+    .project-full-card .proj-en-desc { font-size:0.8rem; color:var(--text-muted); margin-bottom:12px; line-height:1.6; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); font-size:0.85rem; font-weight:600; text-decoration:none; transition:var(--transition); }
+    .back-link:hover { color:var(--purple); }
+    .hero-breadcrumb { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+    .pillar-badge { display:inline-flex; align-items:center; gap:6px; padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700; background:var(--purple-dim); color:var(--purple); border:1px solid rgba(168,85,247,0.2); }
+    /* LMS spotlight banner */
+    .lms-spotlight { padding:44px 48px; border-radius:var(--radius-xl); background:linear-gradient(135deg,rgba(168,85,247,0.08),rgba(6,182,212,0.06)); border:1px solid rgba(168,85,247,0.18); display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+    .lms-spotlight-text .section-title { margin-bottom:10px; font-size:1.4rem; }
+    .lms-spotlight-text p { color:var(--text-secondary); font-size:0.88rem; max-width:500px; }
+    .lms-spotlight-icon { font-size:4rem; opacity:0.65; flex-shrink:0; }
+  </style>
+</head>
+<body>
+<nav id="navbar" style="background:rgba(18,18,18,0.95);">
+  <a href="index.html" class="nav-logo">YA.</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#portfolio">← All Pillars</a></li>
+    <li><a href="data-projects.html">Data & AI</a></li>
+    <li><a href="web-tools.html">Web Tools</a></li>
+    <li><a href="automation.html">Automation</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="subpage-hero">
+  <div class="container">
+    <div class="hero-breadcrumb">
+      <a href="index.html#portfolio" class="back-link">← Back to Portfolio</a>
+      <span class="pillar-badge">⚙️ Pillar 02</span>
+    </div>
+    <div class="subpage-hero-tag">Software Architecture & Algorithms — The Mind</div>
+    <h1>All Architecture <span class="gradient-text">Case Studies</span></h1>
+    <p>From low-level memory management in C++ to full-scale UML architecture for enterprise systems — a complete record of all systems design and algorithmic work.</p>
+  </div>
+</div>
+
+<section style="padding:70px 0 40px;">
+  <div class="container">
+    <div class="projects-grid-arch">
+
+      <!-- Huffman -->
+      <div class="project-full-card glass-card reveal" style="border-color:var(--purple-dim);">
+        <div class="proj-title" style="color:var(--purple);">📦 Huffman Compression Engine <span class="tag tag-purple" style="float:right;font-size:0.65rem;">⭐ FEATURED</span></div>
+        <p class="proj-hook" lang="ar">محرك برمجي لضغط ملفات النصوص والصور (Lossless) مبني من الصفر، يبرز الفهم العميق لإدارة الذاكرة.</p>
+        <p class="proj-en-desc">From-scratch C++ implementation of the Huffman Encoding algorithm with a custom min-heap priority queue. Achieves optimal prefix-free lossless compression for text and binary files. Benchmarked compression ratios against zlib-based implementations.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag tag-purple">C++</span><span class="tag tag-purple">Memory Management</span><span class="tag tag-purple">Algorithms</span><span class="tag tag-purple">Data Structures</span><span class="tag tag-purple">Compression</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/Huffman-Compression-Engine.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- Algo Hub -->
+      <div class="project-full-card glass-card reveal delay-1" style="border-color:var(--purple-dim);">
+        <div class="proj-title" style="color:var(--purple);">🔍 Algo Hub: Core Visualizer <span class="tag tag-purple" style="float:right;font-size:0.65rem;">⭐ FEATURED</span></div>
+        <p class="proj-hook" lang="ar">مكتبة برمجية لأعقد خوارزميات علوم الحاسب (Graph, N-Queens)، مصممة لربط المنطق الرياضي الصعب بواجهات مرئية تفاعلية.</p>
+        <p class="proj-en-desc">An interactive visualization library for advanced algorithms: Graph Traversal (BFS/DFS), Dijkstra's Shortest Path, N-Queens with Backtracking, and Dynamic Programming (Knapsack, LCS). Each algorithm is animated step-by-step for educational clarity.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag tag-purple">Python</span><span class="tag tag-purple">Dynamic Programming</span><span class="tag tag-purple">Backtracking</span><span class="tag tag-purple">Graph Algorithms</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/Algo-Visualizer-Hub.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+          <a href="#" class="btn btn-sm btn-primary"><i data-feather="play-circle"></i> Demo</a>
+        </div>
+      </div>
+
+      <!-- MIPS Verilog -->
+      <div class="project-full-card glass-card reveal" style="opacity:0.8;">
+        <div class="proj-title">
+          🖥️ MIPS Datapath — Verilog
+          <span class="badge-hm" style="margin-left:8px;">Honorable Mention</span>
+        </div>
+        <p class="proj-en-desc">RTL design of a simplified MIPS processor datapath in Verilog. Implements all 5 pipeline stages: Instruction Fetch, Decode, Execute, Memory Access, and Write-Back. Simulated in ModelSim with custom test benches for R-type and I-type instructions.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag tag-purple">Verilog</span><span class="tag tag-purple">Computer Architecture</span><span class="tag tag-purple">MIPS ISA</span><span class="tag tag-purple">RTL Design</span><span class="tag tag-purple">ModelSim</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/mips-datapath-verilog.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- Placeholder for future architecture work -->
+      <div class="project-full-card glass-card reveal delay-1" style="opacity:0.5; border-style:dashed; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:220px;">
+        <div style="font-size:2rem; margin-bottom:10px;">🔜</div>
+        <div style="font-size:0.88rem; color:var(--text-muted); font-weight:600;">More case studies coming soon</div>
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">Microservices design · API Gateway patterns · Cloud architecture</div>
+      </div>
+
+    </div>
+
+    <!-- LMS SRS Spotlight -->
+    <div class="lms-spotlight reveal">
+      <div class="lms-spotlight-text">
+        <p style="color:var(--purple); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.78rem; margin-bottom:10px;">Flagship Case Study</p>
+        <h2 class="section-title">LMS — 90-Page SRS &amp;<br/>UML Architecture</h2>
+        <p>The most comprehensive document in this portfolio: a full IEEE-830 Software Requirements Specification for a Learning Management System, with 20+ Use Case, Sequence, and Class Diagrams across 90 meticulously written pages.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:20px;">
+          <a href="lms-case-study.html" class="btn btn-primary"><i data-feather="book-open"></i> Open Full Case Study</a>
+          <a href="https://github.com/Youssef-Adel91/LMS-System-Architecture-Design.git" target="_blank" class="btn btn-outline"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+      <div class="lms-spotlight-icon">📐</div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">
+  <p>Architecture Case Studies — <span>Youssef Adel</span> · © 2025 &nbsp;|&nbsp; <a href="index.html" style="color:var(--text-muted);">Back to Main Portfolio ↩</a></p>
+</div></footer>
+
+<script src="main.js"></script>
+<script>
+if(typeof feather!=='undefined') feather.replace();
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>40));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+</body>
+</html>

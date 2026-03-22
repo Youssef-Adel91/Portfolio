@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Youssef Adel — Resume</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #1a1a1a;
+      background: #f0f0f0;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 30px auto;
+      padding: 0.65in 0.7in;
+      background: #ffffff;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+    }
+
+    /* ── Header / Name block ── */
+    .header { border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 14px; }
+    .name   { font-size: 22pt; font-weight: 700; letter-spacing: 0.01em; color: #0a0a0a; }
+    .title  { font-size: 10pt; font-weight: 400; color: #444; margin-top: 2px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 18px;
+      margin-top: 8px;
+      font-size: 9pt;
+      color: #333;
+    }
+    .contact-bar a { color: #1a56db; text-decoration: none; }
+    .contact-bar a:hover { text-decoration: underline; }
+    .contact-bar span::before { content: "•"; margin-right: 6px; color: #999; }
+    .contact-bar span:first-child::before { content: ""; margin-right: 0; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 15px; }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 3px;
+      margin-bottom: 9px;
+      color: #0a0a0a;
+    }
+
+    /* ── Summary ── */
+    .summary p { color: #222; line-height: 1.55; }
+
+    /* ── Education / Experience entries ── */
+    .entry { margin-bottom: 11px; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .entry-org   { font-weight: 700; font-size: 10.5pt; }
+    .entry-role  { font-weight: 600; font-size: 10pt; margin-top: 1px; }
+    .entry-meta  { font-size: 9pt; color: #555; white-space: nowrap; }
+    .entry-sub   { font-size: 9.5pt; color: #444; margin-top: 1px; }
+
+    ul.bullets {
+      margin-top: 5px;
+      padding-left: 16px;
+      list-style: disc;
+    }
+    ul.bullets li { margin-bottom: 3px; font-size: 9.5pt; color: #222; line-height: 1.5; }
+    ul.bullets li strong { font-weight: 600; }
+
+    /* ── Skills ── */
+    .skills-table { width: 100%; border-collapse: collapse; }
+    .skills-table td {
+      vertical-align: top;
+      padding: 3px 6px 3px 0;
+      font-size: 9.5pt;
+      line-height: 1.5;
+    }
+    .skills-table td:first-child {
+      font-weight: 700;
+      white-space: nowrap;
+      width: 175px;
+      color: #111;
+    }
+
+    /* ── Certifications ── */
+    ul.cert-list { padding-left: 16px; list-style: disc; }
+    ul.cert-list li { margin-bottom: 4px; font-size: 9.5pt; }
+    ul.cert-list li span { color: #555; }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: #fff; font-size: 10pt; }
+      .page { margin: 0; padding: 0.55in 0.65in; box-shadow: none; width: 100%; min-height: auto; }
+      a { color: #1a56db !important; text-decoration: none !important; }
+      .no-print { display: none; }
+    }
+
+    /* ── Print button (screen only) ── */
+    .print-btn {
+      display: block;
+      margin: 16px auto 0;
+      width: 160px;
+      padding: 10px 0;
+      background: #1a56db;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 10pt;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+    .print-btn:hover { background: #1447b8; }
+  </style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨 Print / Save PDF</button>
+
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <div class="header">
+    <div class="name">Youssef Adel</div>
+    <div class="title">Computer Science Student &nbsp;|&nbsp; Data Engineering &amp; AI</div>
+    <div class="contact-bar">
+      <span>Cairo, Egypt</span>
+      <span><a href="mailto:youssef.adel5@msa.edu.eg">youssef.adel5@msa.edu.eg</a></span>
+      <span>+20 010-028-04304</span>
+      <span><a href="https://linkedin.com/in/youssef-adel-b0001b246" target="_blank">linkedin.com/in/youssef-adel-b0001b246</a></span>
+      <span><a href="https://github.com/Youssef-Adel91" target="_blank">github.com/Youssef-Adel91</a></span>
+      <span><a href="https://youssef-adel91.github.io" target="_blank">youssef-adel91.github.io</a></span>
+    </div>
+  </div>
+
+  <!-- ══ PROFESSIONAL SUMMARY ══ -->
+  <div class="section summary">
+    <div class="section-title">Professional Summary</div>
+    <p>
+      Motivated Computer Science undergraduate (GPA 3.44 / 4.00) with a solid foundation in Data Engineering,
+      Machine Learning, and Algorithm Design. Experienced in building automated data pipelines, implementing
+      ML algorithms from scratch, and extracting actionable insights from structured and unstructured data.
+      Proficient in Python (Pandas, NumPy, Scikit-Learn), SQL, and C++, with growing expertise in Network
+      Security fundamentals. Proven leadership through national youth tech initiatives presented to government
+      ministries and international organizations. Seeking an AI / Data Engineering internship to apply
+      analytical and development skills in a real-world technical environment.
+    </p>
+  </div>
+
+  <!-- ══ EDUCATION ══ -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">October University for Modern Sciences and Arts (MSA University)</div>
+        <div class="entry-meta">Cairo, Egypt</div>
+      </div>
+      <div class="entry-header" style="margin-top:2px;">
+        <div class="entry-role">Bachelor of Science in Computer Science</div>
+        <div class="entry-meta">Expected Graduation: July 2027</div>
+      </div>
+      <div class="entry-sub">Cumulative GPA: <strong>3.44 / 4.00</strong></div>
+      <ul class="bullets">
+        <li><strong>Relevant Coursework:</strong> Data Structures &amp; Algorithms, Database Management Systems (SQL),
+          Artificial Intelligence, Machine Learning, Computer Networks, Object-Oriented Programming (C++),
+          Operating Systems, Computer Architecture.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ TECHNICAL SKILLS ══ -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <table class="skills-table">
+      <tr>
+        <td>Languages</td>
+        <td>Python, SQL, C++, JavaScript</td>
+      </tr>
+      <tr>
+        <td>Data &amp; AI Libraries</td>
+        <td>Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn</td>
+      </tr>
+      <tr>
+        <td>Data Engineering</td>
+        <td>ETL Pipeline Design, Data Cleaning &amp; Transformation, Data Quality, Automated Pipelines</td>
+      </tr>
+      <tr>
+        <td>Machine Learning</td>
+        <td>Classification, Regression, Clustering (KNN, SVM, Linear Regression, K-Means) — implemented from scratch and with Scikit-Learn</td>
+      </tr>
+      <tr>
+        <td>Cybersecurity &amp; Networks</td>
+        <td>IP Addressing, Subnetting, Network Hardware, Threat Analysis Concepts</td>
+      </tr>
+      <tr>
+        <td>Tools &amp; Platforms</td>
+        <td>Git &amp; GitHub, VS Code, Jupyter Notebook, Linux CLI</td>
+      </tr>
+      <tr>
+        <td>Soft Skills</td>
+        <td>Problem-Solving (CPC Competitor), Leadership, Stakeholder Presentations, Analytical Thinking</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ══ PROJECTS ══ -->
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <!-- ML From Scratch -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">Machine Learning Algorithms From Scratch</div>
+        <div class="entry-meta">
+          <a href="https://github.com/Youssef-Adel91/ML-Algorithms-From-Scratch" target="_blank">github.com/Youssef-Adel91/ML-Algorithms-From-Scratch</a>
+        </div>
+      </div>
+      <div class="entry-sub">Python &nbsp;·&nbsp; NumPy &nbsp;·&nbsp; Pandas &nbsp;·&nbsp; Scikit-Learn</div>
+      <ul class="bullets">
+        <li>Implemented core ML algorithms (KNN, SVM, Linear Regression, K-Means Clustering) in pure Python
+          without high-level ML abstractions, demonstrating deep understanding of mathematical foundations.</li>
+        <li>Leveraged NumPy for optimized matrix operations and Pandas for data preprocessing and feature engineering.</li>
+        <li>Conducted comparative performance benchmarking against Scikit-Learn implementations to validate
+          accuracy and computational efficiency.</li>
+      </ul>
+    </div>
+
+    <!-- InfoDemics -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">InfoDemics: Data Engineering &amp; Analytics Pipeline</div>
+        <div class="entry-meta">
+          <a href="https://github.com/Youssef-Adel91/InfoDemics" target="_blank">github.com/Youssef-Adel91/InfoDemics</a>
+        </div>
+      </div>
+      <div class="entry-sub">Python &nbsp;·&nbsp; PySpark &nbsp;·&nbsp; SIR Modeling &nbsp;·&nbsp; Data Visualization</div>
+      <ul class="bullets">
+        <li>Designed and built an end-to-end data pipeline ingesting, cleaning, and transforming a social network
+          graph of <strong>160+ nodes and 260+ edges</strong> extracted from real Twitter interaction data.</li>
+        <li>Applied epidemiological SIR (Susceptible-Infected-Recovered) modeling to simulate misinformation spread
+          across <strong>3 distinct propagation scenarios</strong>, quantifying infection rates and recovery thresholds.</li>
+        <li>Produced <strong>10+ analytical visualizations</strong> (heatmaps, spread curves, network graphs) to
+          surface actionable insights on slowing viral falsehoods — translating raw data into business intelligence.</li>
+      </ul>
+    </div>
+
+    <!-- ML Comparative Analysis -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">ML Comparative Analysis — Algorithm Benchmarking</div>
+        <div class="entry-meta">
+          <a href="https://github.com/Youssef-Adel91" target="_blank">github.com/Youssef-Adel91</a>
+        </div>
+      </div>
+      <div class="entry-sub">Python &nbsp;·&nbsp; Scikit-Learn &nbsp;·&nbsp; Pandas &nbsp;·&nbsp; Matplotlib</div>
+      <ul class="bullets">
+        <li>Benchmarked <strong>4 classification algorithms</strong> (SVM, Random Forest, XGBoost, KNN) across
+          <strong>3 structured datasets</strong>, evaluating Accuracy, Precision, Recall, and F1-Score.</li>
+        <li>Generated confusion matrices and ROC curves to identify the optimal model candidate per dataset,
+          reducing misclassification rate by selecting best-fit hyperparameters.</li>
+        <li>Produced a comparative analysis report demonstrating trade-offs between model complexity and
+          predictive performance across <strong>12+ experimental runs</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Diabetes EDA -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">Diabetes EDA — Health Data Analytics</div>
+        <div class="entry-meta">
+          <a href="https://github.com/Youssef-Adel91" target="_blank">github.com/Youssef-Adel91</a>
+        </div>
+      </div>
+      <div class="entry-sub">Python &nbsp;·&nbsp; Pandas &nbsp;·&nbsp; Seaborn &nbsp;·&nbsp; Statistical Analysis</div>
+      <ul class="bullets">
+        <li>Conducted deep exploratory data analysis on a healthcare dataset of <strong>768 patient records</strong>
+          and <strong>8 clinical features</strong> to uncover key diabetes risk indicators.</li>
+        <li>Identified and treated <strong>5 zero-value anomalies</strong> (physiologically invalid entries) through
+          targeted imputation, improving dataset integrity before modeling.</li>
+        <li>Produced <strong>15+ statistical visualizations</strong> (correlation heatmaps, distribution plots, pair plots)
+          demonstrating strong feature relationships and class-specific patterns.</li>
+      </ul>
+    </div>
+
+    <!-- Car Rental DB / LMS Architecture -->
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">LMS Software Requirements Specification — System Architecture</div>
+        <div class="entry-meta">SQL &nbsp;·&nbsp; UML &nbsp;·&nbsp; System Design</div>
+      </div>
+      <div class="entry-sub">UML &nbsp;·&nbsp; SRS &nbsp;·&nbsp; Use Case Design &nbsp;·&nbsp; Relational Database Modeling</div>
+      <ul class="bullets">
+        <li>Authored a <strong>90-page IEEE-830 compliant Software Requirements Specification (SRS)</strong>
+          for a Learning Management System, covering all functional and non-functional requirements.</li>
+        <li>Designed <strong>20+ UML diagrams</strong> (Use Case, Sequence, Class, Activity) mapping interactions
+          across <strong>6 system actors</strong> and <strong>30+ use cases</strong>.</li>
+        <li>Structured a full relational database schema (ERD, 3NF normalization) with stored procedures and
+          complex SQL queries for reporting and data retrieval.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ CERTIFICATIONS ══ -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <ul class="cert-list">
+      <li><strong>IBM Data Science Professional Certificate</strong> <span>— IBM / Coursera</span></li>
+      <li><strong>IBM Introduction to Data Engineering Certificate</strong> <span>— IBM / Coursera</span></li>
+      <li><strong>Huawei Certified ICT Associate – Artificial Intelligence (HCIA-AI V4)</strong> <span>— Huawei ICT Academy</span></li>
+      <li><strong>Problem Solving Training</strong> <span>— CPC (Collegiate Programming Contest) Preparation</span></li>
+    </ul>
+  </div>
+
+  <!-- ══ VOLUNTEERING & LEADERSHIP ══ -->
+  <div class="section">
+    <div class="section-title">Volunteering &amp; Leadership</div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">Maharat Misr National Initiative</div>
+        <div class="entry-meta">Oct 2024</div>
+      </div>
+      <div class="entry-role">Team Leader</div>
+      <ul class="bullets">
+        <li>Led a cross-functional team to design and implement a technology-driven solution integrating digital
+          tools with academic learning, with a specific focus on accessibility for people with disabilities.</li>
+        <li>Presented project outcomes and technical proposals to high-level stakeholders, including representatives
+          from <strong>Egypt's Ministry of Youth and Sports</strong> and <strong>GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit)</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-org">Lebaladna Initiative</div>
+        <div class="entry-meta">March 2025</div>
+      </div>
+      <div class="entry-role">Team Leader</div>
+      <ul class="bullets">
+        <li>Managed team logistics, task delegation, and operational planning to enhance organizational
+          efficiency throughout community charity initiatives.</li>
+        <li>Coordinated cross-team communication and ensured timely delivery of project milestones.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- .page -->
+
+</body>
+</html>

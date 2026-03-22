@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Banker's Algorithm Simulator</title>
+  <style>
+    :root {
+      --bg: #0d0d0d; --surface: #1a1a1a; --border: rgba(255,255,255,0.1);
+      --teal: #06b6d4; --teal-dim: rgba(6,182,212,0.15);
+      --green: #22c55e; --red: #ef4444; --yellow: #eab308;
+      --text: #f0f0f0; --muted: #6b7280;
+      --r: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }
+    .app { padding: 16px; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1rem; font-weight: 700; color: var(--teal); margin-bottom: 4px; }
+    .subtitle { color: var(--muted); font-size: 0.75rem; margin-bottom: 14px; }
+
+    /* Config Row */
+    .config-row { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+    .config-row label { color: var(--muted); font-size: 0.75rem; }
+    .config-row input {
+      width: 56px; padding: 5px 8px; border-radius: var(--r);
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-size: 0.78rem; outline: none;
+    }
+    .config-row input:focus { border-color: var(--teal); }
+    .btn {
+      padding: 6px 14px; border-radius: 999px; border: none; cursor: pointer;
+      font-weight: 600; font-size: 0.75rem; transition: 0.2s;
+    }
+    .btn-teal { background: var(--teal); color: #000; }
+    .btn-teal:hover { filter: brightness(1.15); }
+    .btn-ghost { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* Grid section */
+    .section-label { font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .matrices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
+    @media (max-width: 640px) { .matrices-grid { grid-template-columns: 1fr; } }
+
+    .matrix-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 12px; overflow-x: auto;
+    }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 4px 8px; text-align: center; font-size: 0.78rem; }
+    th { color: var(--teal); font-weight: 700; font-size: 0.7rem; border-bottom: 1px solid var(--border); }
+    td { color: var(--text); }
+    td input {
+      width: 40px; padding: 3px 4px; border-radius: 4px;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.04);
+      color: var(--text); text-align: center; font-size: 0.75rem; outline: none;
+    }
+    td input:focus { border-color: var(--teal); background: var(--teal-dim); }
+    .row-label { color: var(--muted); font-weight: 600; font-size: 0.72rem; }
+
+    /* Result */
+    .result-box {
+      border-radius: var(--r); border: 1px solid var(--border);
+      background: var(--surface); padding: 14px; margin-bottom: 12px;
+    }
+    .result-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .safe-badge { padding: 3px 12px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; }
+    .safe   { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+    .unsafe { background: rgba(239,68,68,0.15);  color: var(--red);   border: 1px solid rgba(239,68,68,0.3); }
+    .pending { background: rgba(107,114,128,0.15); color: var(--muted); border: 1px solid var(--border); }
+    .seq-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .seq-label { font-size: 0.72rem; color: var(--muted); }
+    .seq-pill {
+      padding: 3px 12px; border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+      background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(6,182,212,0.25);
+    }
+    .steps-area { max-height: 160px; overflow-y: auto; }
+    .step-line { padding: 3px 0; font-size: 0.75rem; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .step-line .ok   { color: var(--green); font-weight: 700; }
+    .step-line .fail { color: var(--red);   font-weight: 700; }
+    .step-line .proc { color: var(--teal);  font-weight: 700; }
+
+    .need-table-wrap { margin-top: 12px; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <h1>🏦 Banker's Algorithm Simulator</h1>
+  <p class="subtitle">OS Deadlock Avoidance — Safety Algorithm Visualizer</p>
+
+  <!-- Config -->
+  <div class="config-row">
+    <label>Processes</label>
+    <input type="number" id="nProc" value="5" min="2" max="8"/>
+    <label>Resources</label>
+    <input type="number" id="nRes"  value="3" min="2" max="6"/>
+    <button class="btn btn-ghost" onclick="buildTables()">🔄 Rebuild</button>
+    <button class="btn btn-ghost" onclick="loadExample()">📂 Load Example</button>
+    <button class="btn btn-teal"  onclick="runBankers()">▶ Run Algorithm</button>
+  </div>
+
+  <!-- Matrices -->
+  <div class="matrices-grid">
+    <div class="matrix-card">
+      <div class="section-label">Allocation (A<sub>ij</sub>)</div>
+      <table id="allocTable"></table>
+    </div>
+    <div class="matrix-card">
+      <div class="section-label">Maximum (Max<sub>ij</sub>)</div>
+      <table id="maxTable"></table>
+    </div>
+    <div class="matrix-card">
+      <div class="section-label">Available Resources</div>
+      <table id="availTable"></table>
+      <div class="need-table-wrap">
+        <div class="section-label" style="margin-top:10px;">Need (= Max - Alloc)</div>
+        <table id="needTable"></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="result-box">
+    <div class="result-header">
+      <span class="safe-badge pending" id="statusBadge">Awaiting Input…</span>
+      <span id="statusText" style="font-size:0.78rem; color:var(--muted);">Click "Run Algorithm" to execute the safety check.</span>
+    </div>
+    <div class="seq-row" id="seqRow" style="display:none;">
+      <span class="seq-label">Safe Sequence:</span>
+      <div id="seqPills"></div>
+    </div>
+    <div class="steps-area" id="stepsArea"></div>
+  </div>
+</div>
+
+<script>
+let P = 5, R = 3;
+
+function heads(r) {
+  let h = '<tr><th class="row-label">P\\R</th>';
+  for (let j = 0; j < r; j++) h += `<th>R${j}</th>`;
+  return h + '</tr>';
+}
+
+function buildTable(id, p, r, vals = null, editable = true) {
+  const t = document.getElementById(id);
+  let html = heads(r);
+  for (let i = 0; i < p; i++) {
+    html += `<tr><td class="row-label">P${i}</td>`;
+    for (let j = 0; j < r; j++) {
+      const v = vals ? vals[i][j] : 0;
+      if (editable)
+        html += `<td><input type="number" id="${id}_${i}_${j}" value="${v}" min="0" max="99"/></td>`;
+      else
+        html += `<td id="${id}_${i}_${j}" style="color:var(--teal)">${v}</td>`;
+    }
+    html += '</tr>';
+  }
+  t.innerHTML = html;
+}
+
+function buildAvail(p, r, vals = null) {
+  const t = document.getElementById('availTable');
+  let html = '<tr>';
+  for (let j = 0; j < r; j++) html += `<th>R${j}</th>`;
+  html += '</tr><tr>';
+  for (let j = 0; j < r; j++) {
+    const v = vals ? vals[j] : 0;
+    html += `<td><input type="number" id="avail_${j}" value="${v}" min="0" max="99"/></td>`;
+  }
+  t.innerHTML = html + '</tr>';
+}
+
+function buildNeed(p, r) {
+  const t = document.getElementById('needTable');
+  let html = heads(r);
+  for (let i = 0; i < p; i++) {
+    html += `<tr><td class="row-label">P${i}</td>`;
+    for (let j = 0; j < r; j++)
+      html += `<td id="need_${i}_${j}" style="color:var(--muted)">-</td>`;
+    html += '</tr>';
+  }
+  t.innerHTML = html;
+}
+
+function buildTables() {
+  P = parseInt(document.getElementById('nProc').value) || 5;
+  R = parseInt(document.getElementById('nRes').value)  || 3;
+  buildTable('allocTable', P, R);
+  buildTable('maxTable',   P, R);
+  buildAvail(P, R);
+  buildNeed(P, R);
+  clearResult();
+}
+
+function loadExample() {
+  P = 5; R = 3;
+  document.getElementById('nProc').value = 5;
+  document.getElementById('nRes').value  = 3;
+  const alloc = [[0,1,0],[2,0,0],[3,0,2],[2,1,1],[0,0,2]];
+  const max   = [[7,5,3],[3,2,2],[9,0,2],[2,2,2],[4,3,3]];
+  const avail = [3,3,2];
+  buildTable('allocTable', P, R, alloc);
+  buildTable('maxTable',   P, R, max);
+  buildAvail(P, R, avail);
+  buildNeed(P, R);
+  clearResult();
+}
+
+function clearResult() {
+  document.getElementById('statusBadge').className = 'safe-badge pending';
+  document.getElementById('statusBadge').textContent = 'Awaiting Input…';
+  document.getElementById('statusText').textContent = 'Click "Run Algorithm" to execute the safety check.';
+  document.getElementById('seqRow').style.display = 'none';
+  document.getElementById('stepsArea').innerHTML = '';
+}
+
+function getMatrix(id, p, r) {
+  const m = [];
+  for (let i = 0; i < p; i++) {
+    m.push([]);
+    for (let j = 0; j < r; j++) {
+      const el = document.getElementById(`${id}_${i}_${j}`);
+      m[i].push(parseInt(el ? el.value : 0) || 0);
+    }
+  }
+  return m;
+}
+function getAvail(r) {
+  const a = [];
+  for (let j = 0; j < r; j++)
+    a.push(parseInt(document.getElementById(`avail_${j}`)?.value) || 0);
+  return a;
+}
+
+function runBankers() {
+  const alloc = getMatrix('allocTable', P, R);
+  const max   = getMatrix('maxTable',   P, R);
+  const avail = getAvail(R).slice();
+
+  // Compute need
+  const need = [];
+  for (let i = 0; i < P; i++) {
+    need.push([]);
+    for (let j = 0; j < R; j++) {
+      const n = max[i][j] - alloc[i][j];
+      need[i].push(n);
+      const el = document.getElementById(`need_${i}_${j}`);
+      if (el) { el.textContent = n; el.style.color = n < 0 ? 'var(--red)' : 'var(--text)'; }
+    }
+  }
+
+  // Safety Algorithm
+  const work    = avail.slice();
+  const finish  = new Array(P).fill(false);
+  const seq     = [];
+  const steps   = [];
+  let   changed = true;
+
+  while (changed) {
+    changed = false;
+    for (let i = 0; i < P; i++) {
+      if (finish[i]) continue;
+      let canRun = true;
+      for (let j = 0; j < R; j++) {
+        if (need[i][j] > work[j]) { canRun = false; break; }
+      }
+      if (canRun) {
+        finish[i]  = true;
+        changed    = true;
+        const prev = work.slice();
+        for (let j = 0; j < R; j++) work[j] += alloc[i][j];
+        seq.push(i);
+        steps.push({proc: i, need: need[i].slice(), work: prev, workAfter: work.slice(), ok: true});
+      }
+    }
+  }
+
+  // Add blocked processes
+  for (let i = 0; i < P; i++) {
+    if (!finish[i]) steps.push({proc: i, need: need[i].slice(), work: work.slice(), ok: false});
+  }
+
+  const safe = seq.length === P;
+
+  // Update UI
+  const badge = document.getElementById('statusBadge');
+  badge.className = 'safe-badge ' + (safe ? 'safe' : 'unsafe');
+  badge.textContent = safe ? '✅ SAFE STATE' : '❌ UNSAFE STATE';
+
+  document.getElementById('statusText').textContent = safe
+    ? `System is in a safe state. Found safe sequence of length ${P}.`
+    : `System is in an UNSAFE state — deadlock may occur! (${seq.length}/${P} processes can complete)`;
+
+  // Safe sequence
+  const seqRow = document.getElementById('seqRow');
+  const seqPills = document.getElementById('seqPills');
+  if (safe) {
+    seqRow.style.display = 'flex';
+    seqPills.innerHTML = seq.map((p, i) =>
+      `<span class="seq-pill">P${p}</span>${i < seq.length-1 ? '<span style="color:var(--muted);font-size:0.7rem">→</span>' : ''}`
+    ).join('');
+  } else {
+    seqRow.style.display = 'none';
+  }
+
+  // Steps log
+  const stepsArea = document.getElementById('stepsArea');
+  stepsArea.innerHTML = steps.map(s => {
+    const needStr = `Need: [${s.need.join(',')}]`;
+    const wrkStr  = `Work: [${s.work.join(',')}]`;
+    const afterStr = s.ok ? ` → [${s.workAfter.join(',')}]` : '';
+    const mark = s.ok ? '<span class="ok">✓</span>' : '<span class="fail">✗</span>';
+    return `<div class="step-line">${mark} <span class="proc">P${s.proc}</span> | ${needStr} | ${wrkStr}${afterStr} | ${s.ok ? 'Allocated' : 'Blocked — need exceeds work'}</div>`;
+  }).join('');
+}
+
+// Initialize
+buildTables();
+loadExample();
+</script>
+</body>
+</html>

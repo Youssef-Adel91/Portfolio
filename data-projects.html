@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="All Data & AI Projects by Youssef Adel — InfoDemics, Diabetes EDA, ML Comparative Analysis, Car Rental DB Design."/>
+  <title>Data & AI Projects | Youssef Adel</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .subpage-hero { padding: 130px 0 60px; border-bottom: 1px solid var(--border-glass); }
+    .subpage-hero-tag { display:inline-block; background:var(--teal-dim); color:var(--teal); border:1px solid rgba(6,182,212,0.2); border-radius:999px; padding:5px 16px; font-size:0.78rem; font-weight:700; letter-spacing:0.07em; margin-bottom:16px; }
+    .subpage-hero h1 { font-size:clamp(1.9rem,4vw,3rem); font-weight:800; margin-bottom:14px; }
+    .subpage-hero p  { color:var(--text-secondary); max-width:600px; font-size:0.97rem; line-height:1.8; }
+    .projects-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:56px; }
+    @media(max-width:768px){ .projects-grid{ grid-template-columns:1fr; } }
+    .project-full-card { border-radius:var(--radius-lg); padding:28px; }
+    .project-full-card .proj-title { font-size:1rem; font-weight:700; margin-bottom:8px; }
+    .project-full-card .proj-hook { font-size:0.82rem; color:var(--text-secondary); direction:rtl; text-align:right; border-right:2px solid var(--teal-dim); padding-right:10px; margin-bottom:10px; font-style:italic; line-height:1.75; }
+    .project-full-card .proj-en-desc { font-size:0.8rem; color:var(--text-muted); margin-bottom:12px; line-height:1.6; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); font-size:0.85rem; font-weight:600; text-decoration:none; margin-bottom:0; transition:var(--transition); }
+    .back-link:hover { color:var(--teal); }
+    .hero-breadcrumb { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+    .pillar-badge { display:inline-flex; align-items:center; gap:6px; padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700; background:var(--teal-dim); color:var(--teal); border:1px solid rgba(6,182,212,0.2); }
+  </style>
+</head>
+<body>
+<nav id="navbar" style="background:rgba(18,18,18,0.95);">
+  <a href="index.html" class="nav-logo">YA.</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#portfolio">← All Pillars</a></li>
+    <li><a href="architecture.html">Architecture</a></li>
+    <li><a href="web-tools.html">Web Tools</a></li>
+    <li><a href="automation.html">Automation</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="subpage-hero">
+  <div class="container">
+    <div class="hero-breadcrumb">
+      <a href="index.html#portfolio" class="back-link">← Back to Portfolio</a>
+      <span class="pillar-badge">🧠 Pillar 01</span>
+    </div>
+    <div class="subpage-hero-tag">Data & AI — The Backbone</div>
+    <h1>All Data &amp; <span class="gradient-text">AI Projects</span></h1>
+    <p>From epidemiological network simulations to health data analytics — a complete record of all data engineering and machine learning case studies.</p>
+  </div>
+</div>
+
+<section style="padding:70px 0 100px;">
+  <div class="container">
+    <div class="projects-grid">
+
+      <!-- InfoDemics -->
+      <div class="project-full-card glass-card reveal">
+        <div class="proj-title">🌐 InfoDemics: SIR Model Visualizer <span class="tag" style="float:right;font-size:0.65rem;">⭐ FEATURED</span></div>
+        <p class="proj-hook" lang="ar">محاكي تفاعلي لانتشار الشائعات يعتمد على نماذج الأوبئة الرياضية. يحلل بيانات شبكات تويتر الحقيقية لاستخراج رؤى حول تقليل انتشار المعلومات المضللة.</p>
+        <p class="proj-en-desc">Interactive simulation of information spread using Epidemiological SIR modeling on real Twitter network data. Models susceptible, infected, and recovered states across a social graph to extract insights on reducing misinformation propagation.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag">Python</span><span class="tag">PySpark</span><span class="tag">SIR Modeling</span><span class="tag">NetworkX</span><span class="tag">Matplotlib</span><span class="tag">Simulation</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/InfoDemics.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+          <a href="#" class="btn btn-sm btn-primary"><i data-feather="play-circle"></i> Demo</a>
+        </div>
+      </div>
+
+      <!-- Diabetes EDA -->
+      <div class="project-full-card glass-card reveal delay-1">
+        <div class="proj-title">🩺 Diabetes EDA <span class="tag" style="float:right;font-size:0.65rem;">⭐ FEATURED</span></div>
+        <p class="proj-hook" lang="ar">تحليل استكشافي عميق لبيانات صحية لاستخراج المؤشرات المرتبطة بمرض السكري عبر رسوم بيانية إحصائية واضحة.</p>
+        <p class="proj-en-desc">Deep exploratory data analysis on the Pima Indians Diabetes Dataset: outlier detection, feature correlation heatmaps, distribution analysis, and statistical inference to identify key health indicators.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag">Python</span><span class="tag">Seaborn</span><span class="tag">Pandas</span><span class="tag">Data Analysis</span><span class="tag">Statistics</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/Diabetes-Health-Indicators.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- ML Comparative Analysis -->
+      <div class="project-full-card glass-card reveal">
+        <div class="proj-title">📊 ML Comparative Analysis</div>
+        <p class="proj-en-desc">Rigorous benchmarking of classification algorithms (SVM, Random Forest, XGBoost, KNN) on structured datasets. Full precision-recall-F1 evaluation with confusion matrices and ROC curves to identify optimal model candidates.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Pandas</span><span class="tag">XGBoost</span><span class="tag">ML</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/Machine-Learning-Algorithms-From-Scratch.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <!-- Car Rental DB Design -->
+      <div class="project-full-card glass-card reveal delay-1">
+        <div class="proj-title">🚗 Car Rental Database Design</div>
+        <p class="proj-en-desc">Full relational schema design for a car rental system. Includes complete ERD, normalization to 3NF, stored procedures, views, triggers, and complex analytical SQL queries for business reporting.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag">SQL</span><span class="tag">ERD</span><span class="tag tag-purple">Database Design</span><span class="tag tag-purple">Normalization</span><span class="tag tag-purple">Stored Procedures</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/Car-Rental-Database-System.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">
+  <p>Data &amp; AI Projects — <span>Youssef Adel</span> · © 2025 &nbsp;|&nbsp; <a href="index.html" style="color:var(--text-muted);">Back to Main Portfolio ↩</a></p>
+</div></footer>
+
+<script src="main.js"></script>
+<script>
+if(typeof feather!=='undefined') feather.replace();
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>40));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>{l.classList.toggle('open');});
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+</body>
+</html>

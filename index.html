@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Youssef Adel — Software Architect & Data Engineer. Explore case studies in AI, data engineering, web apps, and system design." />
+  <title>Youssef Adel | Data Engineer & AI Automation Specialist</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Feather Icons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">YA.</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#education">Skills</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#case-study">Architecture</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="neural-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+
+      <!-- Portrait -->
+      <div class="hero-portrait-wrap reveal">
+        <div class="hero-portrait-ring">
+          <img src="assets/me.jpeg" alt="Youssef Adel - Software Architect and Data Engineer" />
+        </div>
+        <span class="hero-badge">🎓 GPA 3.44</span>
+      </div>
+
+      <!-- Text -->
+      <div class="hero-text">
+        <span class="hero-greeting">Hello, World — I'm</span>
+        <h1 class="hero-heading reveal delay-1">
+          Youssef Adel<br />
+          <span class="gradient-text">Data Engineer<br />&amp; AI Automation Specialist</span>
+        </h1>
+        <p class="hero-subtext reveal delay-2">
+          I engineer robust data pipelines, build AI-driven automation workflows, and develop interactive applications.
+          Backed by a solid Computer Science foundation (<strong style="color:var(--teal)">GPA: 3.44</strong>)
+          and global certifications from <strong>IBM &amp; Huawei</strong>, I transform raw data into
+          business intelligence and automate complex tasks to create seamless user experiences.
+        </p>
+        <div class="hero-cta reveal delay-3">
+          <a href="#portfolio" class="btn btn-primary">
+            <i data-feather="layers"></i> Explore My Work
+          </a>
+          <a href="assets/resume.pdf" download class="btn btn-outline">
+            <i data-feather="download"></i> Download Resume
+          </a>
+        </div>
+        <div class="hero-stats reveal delay-4">
+          <div class="stat-item">
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">2</div>
+            <div class="stat-label">National Initiatives</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">90<span style="font-size:1rem">pg</span></div>
+            <div class="stat-label">SRS Documented</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- .hero-content -->
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     PORTFOLIO GALLERY — 3 PILLARS
+══════════════════════════════════════════════════════════ -->
+  <section id="portfolio">
+    <div class="container">
+      <p class="section-subtitle"
+        style="margin-bottom:0.4rem; color: var(--teal); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;">
+        Case Study Library</p>
+      <h2 class="section-title reveal">My Project Portfolio</h2>
+      <p class="section-subtitle reveal">Four pillars covering the full data &amp; software development lifecycle — from
+        raw data to intelligent automation.</p>
+
+      <div class="pillars-grid">
+
+        <!-- ── Pillar 1: Data & AI ── -->
+        <div class="pillar-card reveal" id="pillar-data">
+          <div class="pillar-header">
+            <div class="pillar-icon">🧠</div>
+            <div>
+              <div class="pillar-number">Pillar 01</div>
+              <div class="pillar-title teal">Data &amp; AI</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">The Backbone</div>
+            </div>
+          </div>
+          <div class="pillar-body">
+
+            <!-- InfoDemics — Hero 1 -->
+            <div class="proj-card featured">
+              <div class="proj-title">🌐 InfoDemics: SIR Model Visualizer</div>
+              <p class="proj-hook">Interactive simulation of misinformation spread using epidemiological SIR modeling on
+                real Twitter network data — surfacing insights to slow viral falsehoods.</p>
+              <div class="proj-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PySpark</span>
+                <span class="tag">SIR Modeling</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/Youssef-Adel91/InfoDemics.git" target="_blank"
+                  class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+                <a href="#" class="btn btn-sm btn-primary"><i data-feather="play-circle"></i> Demo</a>
+              </div>
+            </div>
+
+            <!-- Diabetes EDA — Hero 2 -->
+            <div class="proj-card">
+              <div class="proj-title">🩺 Diabetes EDA</div>
+              <p class="proj-hook">Deep exploratory analysis on health data to uncover key diabetes indicators through
+                clear statistical visualizations and correlation heatmaps.</p>
+              <div class="proj-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Seaborn</span>
+                <span class="tag">Data Analysis</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/Youssef-Adel91/Diabetes-Health-Indicators.git" target="_blank"
+                  class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+              </div>
+            </div>
+
+          </div>
+          <a href="data-projects.html" class="pillar-more-btn teal reveal">View All Data Projects ➔</a>
+        </div>
+        <!-- /Pillar 1 -->
+
+        <!-- ── Pillar 2: Software Architecture & Algorithms ── -->
+        <div class="pillar-card reveal delay-1" id="pillar-arch">
+          <div class="pillar-header">
+            <div class="pillar-icon">⚙️</div>
+            <div>
+              <div class="pillar-number">Pillar 02</div>
+              <div class="pillar-title purple">Software Architecture &amp; Core Algorithms</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">The Mind</div>
+            </div>
+          </div>
+          <div class="pillar-body">
+
+            <!-- Huffman — Hero 1 -->
+            <div class="proj-card featured" style="border-color:var(--purple-dim); background:rgba(168,85,247,0.04);">
+              <div class="proj-title" style="color:var(--purple)">📦 Huffman Compression Engine</div>
+              <p class="proj-hook" style="border-left-color:var(--purple-dim);">Lossless compression engine for text and
+                binary files, built from scratch in C++ with a custom min-heap — demonstrating deep mastery of memory
+                management.</p>
+              <div class="proj-tags">
+                <span class="tag tag-purple">C++</span>
+                <span class="tag tag-purple">Memory Management</span>
+                <span class="tag tag-purple">Algorithms</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/Youssef-Adel91/Huffman-Compression-Engine.git" target="_blank"
+                  class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+              </div>
+            </div>
+
+            <!-- Algo Hub — Hero 2 -->
+            <div class="proj-card">
+              <div class="proj-title">🔍 Algo Hub: Core Visualizer</div>
+              <p class="proj-hook" style="border-left-color:var(--purple-dim);">A library of advanced CS algorithms
+                (Graph traversal, N-Queens, Dynamic Programming) bridging complex mathematical logic with interactive
+                visual interfaces.</p>
+              <div class="proj-tags">
+                <span class="tag tag-purple">Python</span>
+                <span class="tag tag-purple">Dynamic Programming</span>
+                <span class="tag tag-purple">Backtracking</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/Youssef-Adel91/Algo-Visualizer-Hub.git" target="_blank"
+                  class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+                <a href="#" class="btn btn-sm btn-primary"><i data-feather="play-circle"></i> Demo</a>
+              </div>
+            </div>
+
+          </div>
+          <a href="architecture.html" class="pillar-more-btn purple reveal">View All Architecture Case Studies ➔</a>
+        </div>
+        <!-- /Pillar 2 -->
+
+        <!-- ── Pillar 3: Interactive Web & Tools ── -->
+        <div class="pillar-card reveal" id="pillar-web">
+          <div class="pillar-header">
+            <div class="pillar-icon">🌐</div>
+            <div>
+              <div class="pillar-number">Pillar 03</div>
+              <div class="pillar-title" style="color:#eab308;">Interactive Web &amp; Tools</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">The Interface</div>
+            </div>
+          </div>
+          <div class="pillar-body">
+
+            <!-- Banker's Algorithm – LIVE DEMO — Hero 1 -->
+            <div class="proj-card featured" style="border-color:rgba(234,179,8,0.25); background:rgba(234,179,8,0.04);">
+              <div class="proj-title" style="color:#eab308;">🏦 Banker's Algorithm Simulator</div>
+              <p class="proj-hook" style="border-left-color:rgba(234,179,8,0.3);">Live browser-based OS simulator —
+                input resource matrices and watch the Banker's safety algorithm execute step-by-step to prevent
+                deadlocks.</p>
+              <div class="proj-tags">
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">JavaScript</span>
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">Operating
+                  Systems</span>
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">UI/UX</span>
+              </div>
+              <div class="demo-embed-wrap" style="margin-bottom:12px;">
+                <span class="demo-embed-label">⚡ LIVE DEMO</span>
+                <iframe src="bankers-demo.html" title="Banker's Algorithm Simulator" loading="lazy"></iframe>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/Youssef-Adel91/Bankers-Algorithm-Simulator.git" target="_blank"
+                  class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+                <a href="bankers-demo.html" target="_blank" class="btn btn-sm btn-primary"><i
+                    data-feather="maximize-2"></i> Full Screen</a>
+              </div>
+            </div>
+
+            <!-- Car Way — Hero 2 -->
+            <div class="proj-card">
+              <div class="proj-title">🚘 Car Way: Full-Stack Rental System</div>
+              <p class="proj-hook" style="border-left-color:rgba(234,179,8,0.3);">Full-stack car rental platform with
+                PHP MVC backend, MySQL relational database, role-based auth, booking engine, and admin inventory
+                dashboard.</p>
+              <div class="proj-tags">
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">PHP</span>
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">MySQL</span>
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">SQL</span>
+                <span class="tag"
+                  style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">JavaScript</span>
+              </div>
+              <div class="proj-actions">
+                <a href="https://github.com/Youssef-Adel91/CarWay-Rental-WebApp.git" target="_blank"
+                  class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+              </div>
+            </div>
+
+          </div>
+          <a href="web-tools.html" class="pillar-more-btn amber reveal">View All Web Tools ➔</a>
+        </div><!-- /Pillar 3 -->
+
+        <!-- ── Pillar 4: AI & Business Automation — NEW ── -->
+        <div class="pillar-card reveal delay-1" id="pillar-auto">
+          <div class="pillar-header">
+            <div class="pillar-icon" style="background:var(--green-dim);">⚡</div>
+            <div>
+              <div class="pillar-number">Pillar 04</div>
+              <div class="pillar-title" style="color:var(--green);">AI &amp; Business Automation</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">The Engine</div>
+            </div>
+          </div>
+          <div class="pillar-body">
+
+            <!-- Smart Workflow Agent — Solo Hero -->
+            <div class="proj-card featured" style="border-color:var(--green-dim); background:rgba(16,185,129,0.04);">
+              <div class="proj-title" style="color:var(--green);">🤖 Smart Workflow Automation Agent</div>
+              <p class="proj-hook" style="border-left-color:var(--green-dim);">Intelligent pipelines connecting
+                Telegram, Gmail, and Google Calendar — an LLM parses intent and automates task creation, scheduling, and
+                logging with zero manual steps.</p>
+              <div class="proj-tags">
+                <span class="tag"
+                  style="background:var(--green-dim);color:var(--green);border-color:rgba(16,185,129,0.2);">n8n</span>
+                <span class="tag"
+                  style="background:var(--green-dim);color:var(--green);border-color:rgba(16,185,129,0.2);">Make</span>
+                <span class="tag"
+                  style="background:var(--green-dim);color:var(--green);border-color:rgba(16,185,129,0.2);">AI
+                  Agents</span>
+                <span class="tag"
+                  style="background:var(--green-dim);color:var(--green);border-color:rgba(16,185,129,0.2);">API
+                  Integration</span>
+              </div>
+              <div class="proj-actions">
+                <a href="automation.html" class="btn btn-sm btn-primary"><i data-feather="zap"></i> View Workflow</a>
+              </div>
+            </div>
+
+            <!-- Teaser placeholder for future pipelines -->
+            <div class="proj-card" style="opacity:0.55; border-style:dashed; text-align:center; padding:20px;">
+              <div style="font-size:1.5rem; margin-bottom:6px;">🔜</div>
+              <div style="font-size:0.82rem; color:var(--text-muted); font-weight:600;">More pipelines coming soon…
+              </div>
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">CRM automation · RAG agents ·
+                Data sync workflows</div>
+            </div>
+
+          </div>
+          <a href="automation.html" class="pillar-more-btn green reveal">View All Automation Workflows ➔</a>
+        </div><!-- /Pillar 4 -->
+
+      </div><!-- .pillars-grid -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     EDUCATION & CERTIFICATIONS
+══════════════════════════════════════════════════════════ -->
+  <section id="education">
+    <div class="container">
+      <p class="section-subtitle"
+        style="margin-bottom:0.4rem; color: var(--purple); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem;">
+        Academic & Professional</p>
+      <h2 class="section-title reveal">Education &amp; Certified Skills</h2>
+      <p class="section-subtitle reveal">A foundation in Computer Science, validated by globally recognized
+        certifications.</p>
+
+      <div class="edu-grid">
+        <div class="edu-card glass-card reveal">
+          <div class="edu-card-logo">MSA</div>
+          <div class="edu-card-degree">Bachelor of Science — Computer Science</div>
+          <div class="edu-card-school">MSA University, Cairo, Egypt</div>
+          <div class="edu-card-meta">2021 – 2025 &nbsp;·&nbsp; Full-time</div>
+          <div class="gpa-pill">Cumulative GPA: 3.44 / 4.0</div>
+          <div style="margin-top:14px; color:var(--text-secondary); font-size:0.8rem; line-height:1.7;">
+            Specializations: Data Engineering, Software Architecture, Algorithms, Computer Architecture, Operating
+            Systems
+          </div>
+        </div>
+
+        <div class="edu-card glass-card reveal delay-1"
+          style="padding:36px; display:flex; flex-direction:column; justify-content:center;">
+          <h3
+            style="font-weight:700; margin-bottom:20px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.08em; font-size:0.78rem;">
+            Top Certifications</h3>
+          <div class="certs-row" style="margin-bottom:0; grid-template-columns:repeat(3,1fr);">
+            <div class="cert-tile glass-card">
+              <div class="cert-icon">🏆</div>
+              <div class="cert-name">IBM Data Science Professional</div>
+              <div class="cert-issuer">IBM · Coursera</div>
+            </div>
+            <div class="cert-tile glass-card">
+              <div class="cert-icon">🤖</div>
+              <div class="cert-name">Huawei HCIA-AI</div>
+              <div class="cert-issuer">Huawei ICT Academy</div>
+            </div>
+            <div class="cert-tile glass-card"
+              style="background:linear-gradient(135deg,rgba(6,182,212,0.08),rgba(168,85,247,0.08)); border-color:var(--teal-dim);">
+              <div class="cert-icon">🎓</div>
+              <div class="cert-name" style="color:var(--teal);">GPA: 3.44 / 4.0</div>
+              <div class="cert-issuer">MSA University · CS</div>
+            </div>
+          </div>
+          <a href="credentials.html"
+            style="display:inline-block; margin-top:20px; font-size:0.8rem; font-weight:700; color:var(--text-muted); text-decoration:none; text-align:right; transition:var(--transition);"
+            onmouseover="this.style.color='var(--teal)'" onmouseout="this.style.color='var(--text-muted)'">View All
+            Credentials ➔</a>
+        </div>
+      </div>
+
+      <!-- Skill Cloud -->
+      <div class="skills-section reveal">
+        <div class="skills-heading">Technology Stack</div>
+        <div class="skills-cloud">
+          <!-- Languages -->
+          <div class="skill-pill">🐍 Python</div>
+          <div class="skill-pill">⚙️ C++</div>
+          <div class="skill-pill">🗄️ SQL</div>
+          <div class="skill-pill">📟 Verilog / HDL</div>
+          <div class="skill-pill">🐘 PHP</div>
+          <div class="skill-pill">✨ JavaScript</div>
+          <!-- Data & AI -->
+          <div class="skill-pill">🔥 PySpark</div>
+          <div class="skill-pill">🤖 scikit-learn</div>
+          <div class="skill-pill">📊 Pandas &amp; NumPy</div>
+          <div class="skill-pill">📉 SIR Modeling</div>
+          <div class="skill-pill">🧬 EDA &amp; Feature Eng.</div>
+          <!-- Architecture -->
+          <div class="skill-pill">📐 SRS / UML</div>
+          <div class="skill-pill">🗺️ System Design</div>
+          <div class="skill-pill">🔗 REST APIs</div>
+          <div class="skill-pill">🛢️ MySQL / PostgreSQL</div>
+          <!-- Tools -->
+          <div class="skill-pill">🐙 Git &amp; GitHub</div>
+          <div class="skill-pill">🐳 Docker</div>
+          <div class="skill-pill">📓 Jupyter Notebook</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     LEADERSHIP & SOCIAL IMPACT
+══════════════════════════════════════════════════════════ -->
+  <section id="leadership">
+    <div class="container">
+      <div class="leadership-grid">
+        <div class="leadership-image-wrap reveal-left">
+          <img src="assets/leadership.png"
+            alt="Youssef Adel leading a tech presentation for government organizations" />
+          <p class="leadership-image-caption">📍 National-level tech pitches to government ministries &amp; global
+            organizations</p>
+        </div>
+        <div class="leadership-content reveal-right">
+          <p
+            style="color:var(--teal); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; margin-bottom:12px;">
+            Beyond Code</p>
+          <h2 class="section-title">Leadership &amp;<br />Social Impact</h2>
+          <p class="leadership-desc">
+            Successfully led cross-functional teams in national youth initiatives, designing and pitching
+            technology-driven solutions to government ministries and global organizations.
+            Bridging the gap between technical innovation and real-world social impact.
+          </p>
+          <div class="leadership-orgs">
+            <div class="org-chip">
+              <div class="org-emoji">🇪🇬</div>
+              <div>
+                <div class="org-name">Maharat Misr Initiative</div>
+                <div class="org-desc">Team Lead · National Digital Skills Program</div>
+              </div>
+            </div>
+            <div class="org-chip">
+              <div class="org-emoji">🏛️</div>
+              <div>
+                <div class="org-name">Lebaladna Initiative</div>
+                <div class="org-desc">Tech Consultant · Community Development Projects</div>
+              </div>
+            </div>
+            <div class="org-chip">
+              <div class="org-emoji">🌍</div>
+              <div>
+                <div class="org-name">GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit)</div>
+                <div class="org-desc">Pitching tech solutions to international development organizations</div>
+              </div>
+            </div>
+            <div class="org-chip">
+              <div class="org-emoji">🏢</div>
+              <div>
+                <div class="org-name">Government Ministries — Egypt</div>
+                <div class="org-desc">Presented innovative digital solutions to ministry stakeholders</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     LMS CASE STUDY – ARCHITECT'S BLUEPRINT
+══════════════════════════════════════════════════════════ -->
+  <section id="case-study">
+    <div class="container">
+      <div class="case-study-banner reveal">
+        <div class="case-study-text">
+          <p
+            style="color:var(--purple); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; margin-bottom:12px;">
+            The Architect's Blueprint</p>
+          <h2 class="section-title">LMS — 90-Page SRS &amp;<br />UML Architecture</h2>
+          <p>
+            A complete, professional-grade Software Requirements Specification for a Learning Management System.
+            Featuring Use Case Diagrams, Sequence Diagrams, Class Diagrams, and structured requirements covering
+            all system actors and interactions across 90 meticulously documented pages.
+          </p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
+            <a href="lms-case-study.html" class="btn btn-primary">
+              <i data-feather="book-open"></i> View Full Case Study
+            </a>
+            <a href="https://github.com/Youssef-Adel91/LMS-System-Architecture-Design.git" target="_blank"
+              class="btn btn-outline">
+              <i data-feather="github"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+        <div class="case-study-icon">📐</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     CONTACT & FOOTER
+══════════════════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p
+            style="color:var(--teal); font-weight:600; text-transform:uppercase; letter-spacing:0.1em; font-size:0.85rem; margin-bottom:12px;">
+            Get In Touch</p>
+          <h2 class="section-title reveal">Let's Build<br />Something Great.</h2>
+          <p class="reveal">
+            Open to data engineering roles, software architecture opportunities, and exciting collaborative projects.
+            Whether it's a quick question or a long-term partnership — my inbox is always open.
+          </p>
+          <div class="social-links reveal">
+            <a href="https://github.com/Youssef-Adel91" target="_blank" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub — @YoussefAde91
+            </a>
+            <a href="https://www.linkedin.com/in/youssef-adel-b0001b246/" target="_blank" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn — Youssef Adel
+            </a>
+            <a href="mailto:youssef.adel.shehata1@gmail.com" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              youssef.adel.shehata1@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-card glass-card reveal">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="Project Opportunity, Collaboration…" />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" placeholder="Tell me about your project or opportunity…"
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+              <i data-feather="send"></i> Send Message
+            </button>
+            <div class="form-success" id="formSuccess">
+              ✅ Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>Designed &amp; Built with ❤️ by <span>Youssef Adel</span> &nbsp;·&nbsp; © 2025 All rights reserved.</p>
+      <p style="margin-top:8px; font-size:0.72rem;">Software Architect &amp; Data Engineer · Cairo, Egypt 🇪🇬</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

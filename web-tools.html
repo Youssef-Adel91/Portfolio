@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Interactive Web Tools & Full-Stack Projects by Youssef Adel — Banker's Algorithm, Car Way Rental System."/>
+  <title>Web Tools & Projects | Youssef Adel</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .subpage-hero { padding:130px 0 60px; border-bottom:1px solid var(--border-glass); }
+    .subpage-hero-tag { display:inline-block; background:rgba(234,179,8,0.12); color:#eab308; border:1px solid rgba(234,179,8,0.2); border-radius:999px; padding:5px 16px; font-size:0.78rem; font-weight:700; letter-spacing:0.07em; margin-bottom:16px; }
+    .subpage-hero h1 { font-size:clamp(1.9rem,4vw,3rem); font-weight:800; margin-bottom:14px; }
+    .subpage-hero p  { color:var(--text-secondary); max-width:600px; font-size:0.97rem; line-height:1.8; }
+    .projects-grid { display:grid; grid-template-columns:1fr; gap:32px; margin-top:56px; }
+    .project-full-card { border-radius:var(--radius-lg); padding:32px; }
+    .project-full-card .proj-title { font-size:1.05rem; font-weight:700; margin-bottom:8px; }
+    .project-full-card .proj-hook { font-size:0.82rem; color:var(--text-secondary); direction:rtl; text-align:right; border-right:2px solid rgba(234,179,8,0.3); padding-right:10px; margin-bottom:10px; font-style:italic; line-height:1.75; }
+    .project-full-card .proj-en-desc { font-size:0.85rem; color:var(--text-muted); margin-bottom:16px; line-height:1.7; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); font-size:0.85rem; font-weight:600; text-decoration:none; transition:var(--transition); }
+    .back-link:hover { color:#eab308; }
+    .hero-breadcrumb { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+    .pillar-badge { display:inline-flex; align-items:center; gap:6px; padding:5px 14px; border-radius:999px; font-size:0.75rem; font-weight:700; background:rgba(234,179,8,0.12); color:#eab308; border:1px solid rgba(234,179,8,0.2); }
+    .banker-embed-full { width:100%; height:520px; border-radius:12px; border:1px solid rgba(234,179,8,0.15); background:rgba(15,15,15,0.6); overflow:hidden; margin:20px 0; }
+    .banker-embed-full iframe { width:100%; height:100%; border:none; }
+  </style>
+</head>
+<body>
+<nav id="navbar" style="background:rgba(18,18,18,0.95);">
+  <a href="index.html" class="nav-logo">YA.</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#portfolio">← All Pillars</a></li>
+    <li><a href="data-projects.html">Data & AI</a></li>
+    <li><a href="architecture.html">Architecture</a></li>
+    <li><a href="automation.html">Automation</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="subpage-hero">
+  <div class="container">
+    <div class="hero-breadcrumb">
+      <a href="index.html#portfolio" class="back-link">← Back to Portfolio</a>
+      <span class="pillar-badge">🌐 Pillar 03</span>
+    </div>
+    <div class="subpage-hero-tag">Interactive Web & Tools — The Interface</div>
+    <h1>All Web <span class="gradient-text">Tools &amp; Projects</span></h1>
+    <p>Interactive educational tools and full-stack web applications — where complex computer science concepts meet beautiful, usable interfaces.</p>
+  </div>
+</div>
+
+<section style="padding:70px 0 100px;">
+  <div class="container">
+    <div class="projects-grid">
+
+      <!-- Banker's Algorithm – Full Embed -->
+      <div class="project-full-card glass-card reveal" style="border-color:rgba(234,179,8,0.2);">
+        <div class="proj-title" style="color:#eab308;">🏦 Banker's Algorithm Simulator <span class="tag" style="float:right;font-size:0.65rem;color:#eab308;border-color:rgba(234,179,8,0.2);background:rgba(234,179,8,0.1);">⚡ LIVE TOOL</span></div>
+        <p class="proj-hook" lang="ar">أداة تعليمية تفاعلية تحاكي خوارزمية البنكري لتجنب الـ Deadlocks، تحول مفاهيم نظام التشغيل المعقدة إلى تجربة مرئية عصرية.</p>
+        <p class="proj-en-desc">A fully functional browser-based simulator for the Banker's Algorithm — a classic OS deadlock-avoidance mechanism. Input the Allocation matrix, Maximum needs matrix, and Available resources, then run the safety algorithm to determine if the system is in a safe state. Outputs the safe execution sequence with step-by-step trace.</p>
+        <div class="proj-tags" style="margin-bottom:16px;">
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">JavaScript</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">Operating Systems</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">UI/UX</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">Safety Algorithm</span>
+        </div>
+        <div class="banker-embed-full">
+          <iframe src="bankers-demo.html" title="Banker's Algorithm Full Simulator" loading="lazy"></iframe>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/Bankers-Algorithm-Simulator.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+          <a href="bankers-demo.html" target="_blank" class="btn btn-sm btn-primary"><i data-feather="maximize-2"></i> Open Full Screen</a>
+        </div>
+      </div>
+
+      <!-- Car Way -->
+      <div class="project-full-card glass-card reveal" style="border-color:rgba(234,179,8,0.15);">
+        <div class="proj-title" style="color:#eab308;">🚘 Car Way: Full-Stack Rental System <span class="tag" style="float:right;font-size:0.65rem;color:#eab308;border-color:rgba(234,179,8,0.2);background:rgba(234,179,8,0.1);">⭐ FEATURED</span></div>
+        <p class="proj-hook" lang="ar">تطبيق ويب متكامل لإدارة معارض السيارات، يدمج بين واجهة مستخدم جذابة وقاعدة بيانات علائقية لإدارة الصلاحيات والمخزون.</p>
+        <p class="proj-en-desc">A complete car rental platform built with a PHP MVC backend and MySQL database. Features include: user authentication and role management (Admin / Customer), full booking and reservation engine, real-time inventory tracking, admin dashboard for fleet management, and a responsive frontend with dynamic search and filtering.</p>
+        <div class="proj-tags" style="margin-bottom:14px;">
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">PHP</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">MySQL</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">SQL</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">JavaScript</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">Full-Stack</span>
+          <span class="tag" style="background:rgba(234,179,8,0.1);color:#eab308;border-color:rgba(234,179,8,0.2);">MVC</span>
+        </div>
+        <div class="proj-actions">
+          <a href="https://github.com/Youssef-Adel91/CarWay-Rental-WebApp.git" target="_blank" class="btn btn-sm btn-ghost"><i data-feather="github"></i> GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">
+  <p>Web Tools &amp; Projects — <span>Youssef Adel</span> · © 2025 &nbsp;|&nbsp; <a href="index.html" style="color:var(--text-muted);">Back to Main Portfolio ↩</a></p>
+</div></footer>
+
+<script src="main.js"></script>
+<script>
+if(typeof feather!=='undefined') feather.replace();
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>40));
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+</script>
+</body>
+</html>
